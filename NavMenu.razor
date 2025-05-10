@@ -1,0 +1,97 @@
+﻿<div style="height: 100%;">
+        <img src="/Assets/Logos/CommerceLogo.png" alt="CommerceBank Logo" style="width:auto; height:100%; object-fit: contain; padding: 1%" />
+</div>
+
+<div class="navbar-btn-container">
+    <AuthorizeView>
+
+        <NotAuthorized>
+            <div>
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All" ActiveClass="active-link">
+                    <span aria-hidden="true"></span> Home
+                </NavLink>
+            </div>
+            <!--
+            <div>
+                <NavLink class="nav-link" href="/useraccounts" Match="NavLinkMatch.All" ActiveClass="active-link">
+                    <span aria-hidden="true"></span> UADebug
+                </NavLink>
+            </div>
+
+            <div>
+                <NavLink class="nav-link" href="/transactions" Match="NavLinkMatch.All" ActiveClass="active-link">
+                    <span aria-hidden="true"></span> TRDebug
+                </NavLink>
+            </div>
+            -->
+        </NotAuthorized>
+
+        <Authorized>
+            <div>
+                <NavLink class="nav-link" href="/dashboard" Match="NavLinkMatch.All" ActiveClass="active-link">
+                    <span aria-hidden="true"></span> Dashboard
+                </NavLink>
+            </div>
+
+            <div>
+                <NavLink class="nav-link" href="/goals" Match="NavLinkMatch.All" ActiveClass="active-link">
+                    <span aria-hidden="true"></span> Goals
+                </NavLink>
+            </div>
+
+            <div>
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All" ActiveClass="active-link">
+                    <span aria-hidden="true"></span> Home
+                </NavLink>
+            </div>
+        </Authorized>
+
+    </AuthorizeView>
+</div>
+
+<div class="navbar-btn-container" style="justify-content: flex-end">
+    <AuthorizeView>
+
+        <!-- View for when the user is logged out -->
+        <NotAuthorized>
+    <div>
+        <NavLink class="nav-link" href="/login" Match="NavLinkMatch.All" ActiveClass="active-link">
+            <span aria-hidden="true"></span> Login
+        </NavLink>
+    </div>
+
+    <div>
+        <NavLink class="nav-link" href="/signup" Match="NavLinkMatch.All" ActiveClass="active-link">
+            <span aria-hidden="true"></span> Signup
+        </NavLink>
+    </div>
+        </NotAuthorized>
+
+
+        <!-- View for when the user is logged in -->
+        <Authorized>
+    <div>
+        <NavLink class="nav-link" href="/logout">
+            <span aria-hidden="true"></span> Logout
+        </NavLink>
+    </div>
+
+    <div>
+        <NavLink class="nav-link" href="/usersettings" Match="NavLinkMatch.All" ActiveClass="active-link">
+            <span aria-hidden="true"></span> Settings
+        </NavLink>
+    </div>
+        </Authorized>
+
+    </AuthorizeView>
+</div>
+
+
+
+<!--
+    Using Match and ActiveClass to detect what page the user is currently on. If the user is on that page, activate the active-link class.
+    Again, the CSS on Blazor HTML components (dark green on VS default) need a ::deep before the class.
+-->
+
+@code {
+}
