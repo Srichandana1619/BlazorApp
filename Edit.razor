@@ -1,4 +1,4 @@
-﻿@page "/bankaccounts/edit"
+﻿@page "/budgetplans/edit"
 @using Microsoft.EntityFrameworkCore
 @using BlazorApp.Models
 @inject IDbContextFactory<BlazorApp.Data.BlazorAppContext> DbFactory
@@ -8,9 +8,9 @@
 
 <h1>Edit</h1>
 
-<h2>BankAccount</h2>
+<h2>BudgetPlan</h2>
 <hr />
-@if (BankAccount is null)
+@if (BudgetPlan is null)
 {
     <p><em>Loading...</em></p>
 }
@@ -18,24 +18,39 @@ else
 {
     <div class="row">
         <div class="col-md-4">
-            <EditForm method="post" Model="BankAccount" OnValidSubmit="UpdateBankAccount" FormName="edit" Enhance>
+            <EditForm method="post" Model="BudgetPlan" OnValidSubmit="UpdateBudgetPlan" FormName="edit" Enhance>
                 <DataAnnotationsValidator />
                 <ValidationSummary />
-                <input type="hidden" name="BankAccount.BankAccountId" value="@BankAccount.BankAccountId" />
+                <input type="hidden" name="BudgetPlan.BudgetPlanId" value="@BudgetPlan.BudgetPlanId" />
                 <div class="mb-3">
-                    <label for="useraccountid" class="form-label">UserAccountId:</label>
-                    <InputNumber id="useraccountid" @bind-Value="BankAccount.UserAccountId" class="form-control" />
-                    <ValidationMessage For="() => BankAccount.UserAccountId" class="text-danger" />
+                    <label for="accountid" class="form-label">AccountId:</label>
+                    <InputNumber id="accountid" @bind-Value="BudgetPlan.AccountId" class="form-control" />
+                    <ValidationMessage For="() => BudgetPlan.AccountId" class="text-danger" />
                 </div>
                 <div class="mb-3">
-                    <label for="accounttype" class="form-label">AccountType:</label>
-                    <InputText id="accounttype" @bind-Value="BankAccount.AccountType" class="form-control" />
-                    <ValidationMessage For="() => BankAccount.AccountType" class="text-danger" />
+                    <label for="budgetname" class="form-label">Budget Name:</label>
+                    <InputText id="budgetname" @bind-Value="BudgetPlan.BudgetName" class="form-control" />
+                    <ValidationMessage For="() => BudgetPlan.BudgetName" class="text-danger" />
                 </div>
                 <div class="mb-3">
-                    <label for="accountbalance" class="form-label">AccountBalance:</label>
-                    <InputNumber id="accountbalance" @bind-Value="BankAccount.AccountBalance" class="form-control" />
-                    <ValidationMessage For="() => BankAccount.AccountBalance" class="text-danger" />
+                    <label for="budgetamount" class="form-label">BudgetAmount:</label>
+                    <InputNumber id="budgetamount" @bind-Value="BudgetPlan.BudgetAmount" class="form-control" />
+                    <ValidationMessage For="() => BudgetPlan.BudgetAmount" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="budgetexpenditures" class="form-label">BudgetExpenditures:</label>
+                    <InputNumber id="budgetexpenditures" @bind-Value="BudgetPlan.BudgetExpenditures" class="form-control" />
+                    <ValidationMessage For="() => BudgetPlan.BudgetExpenditures" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="startdate" class="form-label">StartDate:</label>
+                    <InputDate id="startdate" @bind-Value="BudgetPlan.StartDate" class="form-control" />
+                    <ValidationMessage For="() => BudgetPlan.StartDate" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="enddate" class="form-label">EndDate:</label>
+                    <InputDate id="enddate" @bind-Value="BudgetPlan.EndDate" class="form-control" />
+                    <ValidationMessage For="() => BudgetPlan.EndDate" class="text-danger" />
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </EditForm>
@@ -44,22 +59,22 @@ else
 }
 
 <div>
-    <a href="/bankaccounts">Back to List</a>
+    <a href="/budgetplans">Back to List</a>
 </div>
 
 @code {
     [SupplyParameterFromQuery]
-    private int BankAccountId { get; set; }
+    private int BudgetPlanId { get; set; }
 
     [SupplyParameterFromForm]
-    private BankAccount? BankAccount { get; set; }
+    private BudgetPlan? BudgetPlan { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         using var context = DbFactory.CreateDbContext();
-        BankAccount ??= await context.BankAccount.FirstOrDefaultAsync(m => m.BankAccountId == BankAccountId);
+        BudgetPlan ??= await context.BudgetPlan.FirstOrDefaultAsync(m => m.BudgetPlanId == BudgetPlanId);
 
-        if (BankAccount is null)
+        if (BudgetPlan is null)
         {
             NavigationManager.NavigateTo("notfound");
         }
@@ -67,10 +82,10 @@ else
 
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
-    private async Task UpdateBankAccount()
+    private async Task UpdateBudgetPlan()
     {
         using var context = DbFactory.CreateDbContext();
-        context.Attach(BankAccount!).State = EntityState.Modified;
+        context.Attach(BudgetPlan!).State = EntityState.Modified;
 
         try
         {
@@ -78,7 +93,7 @@ else
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!BankAccountExists(BankAccount!.BankAccountId))
+            if (!BudgetPlanExists(BudgetPlan!.BudgetPlanId))
             {
                 NavigationManager.NavigateTo("notfound");
             }
@@ -88,12 +103,12 @@ else
             }
         }
 
-        NavigationManager.NavigateTo("/bankaccounts");
+        NavigationManager.NavigateTo("/budgetplans");
     }
 
-    private bool BankAccountExists(int bankaccountid)
+    private bool BudgetPlanExists(int budgetplanid)
     {
         using var context = DbFactory.CreateDbContext();
-        return context.BankAccount.Any(e => e.BankAccountId == bankaccountid);
+        return context.BudgetPlan.Any(e => e.BudgetPlanId == budgetplanid);
     }
 }
