@@ -1,4 +1,4 @@
-﻿@page "/transactions"
+﻿@page "/useraccounts"
 @using Microsoft.EntityFrameworkCore
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using BlazorApp.Models
@@ -6,24 +6,25 @@
 @implements IAsyncDisposable
 @inject IDbContextFactory<BlazorApp.Data.BlazorAppContext> DbFactory
 
-<PageTitle>Index</PageTitle>
+<PageTitle>[Debug] Index</PageTitle>
 
 <h1>Index</h1>
 
 <p>
-    <a href="transactions/create">Create New</a>
+    <a href="useraccounts/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="context.Transaction">
-    <PropertyColumn Property="transaction => transaction.AccountId" />
-    <PropertyColumn Property="transaction => transaction.TransactionAmount" />
-    <PropertyColumn Property="transaction => transaction.TransactionDate" />
-    <PropertyColumn Property="transaction => transaction.Merchant" />
+<QuickGrid Class="table" Items="context.UserAccount">
+    <PropertyColumn Property="useraccount => useraccount.Email" />
+    <PropertyColumn Property="useraccount => useraccount.PasswordHash" />
+    <PropertyColumn Property="useraccount => useraccount.FirstName" />
+    <PropertyColumn Property="useraccount => useraccount.LastName" />
+    <PropertyColumn Property="useraccount => useraccount.CreationDate" />
 
-    <TemplateColumn Context="transaction">
-        <a href="@($"transactions/edit?transactionid={transaction.TransactionId}")">Edit</a> |
-        <a href="@($"transactions/details?transactionid={transaction.TransactionId}")">Details</a> |
-        <a href="@($"transactions/delete?transactionid={transaction.TransactionId}")">Delete</a>
+    <TemplateColumn Context="useraccount">
+        <a href="@($"useraccounts/edit?useraccountid={useraccount.UserAccountId}")">Edit</a> |
+        <a href="@($"useraccounts/details?useraccountid={useraccount.UserAccountId}")">Details</a> |
+        <a href="@($"useraccounts/delete?useraccountid={useraccount.UserAccountId}")">Delete</a>
     </TemplateColumn>
 </QuickGrid>
 
