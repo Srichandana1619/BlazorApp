@@ -1,16 +1,16 @@
-﻿@page "/useraccounts/edit"
+﻿@page "/bankaccounts/edit"
 @using Microsoft.EntityFrameworkCore
 @using BlazorApp.Models
 @inject IDbContextFactory<BlazorApp.Data.BlazorAppContext> DbFactory
 @inject NavigationManager NavigationManager
 
-<PageTitle>[Debug] Edit</PageTitle>
+<PageTitle>Edit</PageTitle>
 
 <h1>Edit</h1>
 
-<h2>UserAccount</h2>
+<h2>BankAccount</h2>
 <hr />
-@if (UserAccount is null)
+@if (BankAccount is null)
 {
     <p><em>Loading...</em></p>
 }
@@ -18,34 +18,24 @@ else
 {
     <div class="row">
         <div class="col-md-4">
-            <EditForm method="post" Model="UserAccount" OnValidSubmit="UpdateUserAccount" FormName="edit" Enhance>
+            <EditForm method="post" Model="BankAccount" OnValidSubmit="UpdateBankAccount" FormName="edit" Enhance>
                 <DataAnnotationsValidator />
                 <ValidationSummary />
-                <input type="hidden" name="UserAccount.UserAccountId" value="@UserAccount.UserAccountId" />
+                <input type="hidden" name="BankAccount.BankAccountId" value="@BankAccount.BankAccountId" />
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <InputText id="email" @bind-Value="UserAccount.Email" class="form-control" />
-                    <ValidationMessage For="() => UserAccount.Email" class="text-danger" />
+                    <label for="useraccountid" class="form-label">UserAccountId:</label>
+                    <InputNumber id="useraccountid" @bind-Value="BankAccount.UserAccountId" class="form-control" />
+                    <ValidationMessage For="() => BankAccount.UserAccountId" class="text-danger" />
                 </div>
                 <div class="mb-3">
-                    <label for="passwordhash" class="form-label">PasswordHash:</label>
-                    <InputText id="passwordhash" @bind-Value="UserAccount.PasswordHash" class="form-control" />
-                    <ValidationMessage For="() => UserAccount.PasswordHash" class="text-danger" />
+                    <label for="accounttype" class="form-label">AccountType:</label>
+                    <InputText id="accounttype" @bind-Value="BankAccount.AccountType" class="form-control" />
+                    <ValidationMessage For="() => BankAccount.AccountType" class="text-danger" />
                 </div>
                 <div class="mb-3">
-                    <label for="firstname" class="form-label">FirstName:</label>
-                    <InputText id="firstname" @bind-Value="UserAccount.FirstName" class="form-control" />
-                    <ValidationMessage For="() => UserAccount.FirstName" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="lastname" class="form-label">LastName:</label>
-                    <InputText id="lastname" @bind-Value="UserAccount.LastName" class="form-control" />
-                    <ValidationMessage For="() => UserAccount.LastName" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="creationdate" class="form-label">CreationDate:</label>
-                    <InputDate id="creationdate" @bind-Value="UserAccount.CreationDate" class="form-control" />
-                    <ValidationMessage For="() => UserAccount.CreationDate" class="text-danger" />
+                    <label for="accountbalance" class="form-label">AccountBalance:</label>
+                    <InputNumber id="accountbalance" @bind-Value="BankAccount.AccountBalance" class="form-control" />
+                    <ValidationMessage For="() => BankAccount.AccountBalance" class="text-danger" />
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </EditForm>
@@ -54,22 +44,22 @@ else
 }
 
 <div>
-    <a href="/useraccounts">Back to List</a>
+    <a href="/bankaccounts">Back to List</a>
 </div>
 
 @code {
     [SupplyParameterFromQuery]
-    private int UserAccountId { get; set; }
+    private int BankAccountId { get; set; }
 
     [SupplyParameterFromForm]
-    private UserAccount? UserAccount { get; set; }
+    private BankAccount? BankAccount { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         using var context = DbFactory.CreateDbContext();
-        UserAccount ??= await context.UserAccount.FirstOrDefaultAsync(m => m.UserAccountId == UserAccountId);
+        BankAccount ??= await context.BankAccount.FirstOrDefaultAsync(m => m.BankAccountId == BankAccountId);
 
-        if (UserAccount is null)
+        if (BankAccount is null)
         {
             NavigationManager.NavigateTo("notfound");
         }
@@ -77,10 +67,10 @@ else
 
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
-    private async Task UpdateUserAccount()
+    private async Task UpdateBankAccount()
     {
         using var context = DbFactory.CreateDbContext();
-        context.Attach(UserAccount!).State = EntityState.Modified;
+        context.Attach(BankAccount!).State = EntityState.Modified;
 
         try
         {
@@ -88,7 +78,7 @@ else
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!UserAccountExists(UserAccount!.UserAccountId))
+            if (!BankAccountExists(BankAccount!.BankAccountId))
             {
                 NavigationManager.NavigateTo("notfound");
             }
@@ -98,12 +88,12 @@ else
             }
         }
 
-        NavigationManager.NavigateTo("/useraccounts");
+        NavigationManager.NavigateTo("/bankaccounts");
     }
 
-    private bool UserAccountExists(int useraccountid)
+    private bool BankAccountExists(int bankaccountid)
     {
         using var context = DbFactory.CreateDbContext();
-        return context.UserAccount.Any(e => e.UserAccountId == useraccountid);
+        return context.BankAccount.Any(e => e.BankAccountId == bankaccountid);
     }
 }
