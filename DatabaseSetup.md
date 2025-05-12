@@ -7,18 +7,19 @@
 
 ## Steps Followed to Set Up the Database Connection
 
-### 1. Install SQL Server
-- Downloaded and installed SQL Server from the [Microsoft SQL Server website](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-- During installation, selected "Basic" installation option which installs SQL Server with default settings
-- SQL Server was installed but needed additional configuration
+### 1. Install or Provision SQL Engine
+Option	How
+Local SQL Server	Download Developer/Express from Microsoft → run “Basic” install (defaults are fine).
+Azure SQL Database	Create a single database in the Azure portal or directly inside ADS’s “Azure” 
 
 ### 2. Configure the Connection String
 - Modified the connection string in `appsettings.json` to connect to the local SQL Server instance:
 ```json
 "ConnectionStrings": {
+ "ConnectionStrings": {
   "BlazorAppContext": "Server=localhost;Database=BlazorAppContext;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true"
 }
-```
+
 
 - The connection string components:
   - `Server=localhost`: Connects to the local SQL Server instance
@@ -26,12 +27,13 @@
   - `Trusted_Connection=True`: Uses Windows authentication
   - `TrustServerCertificate=True`: Skips certificate validation (for development)
   - `MultipleActiveResultSets=true`: Allows multiple active result sets
+**
+### 3. Apply Database Migrations**
+Open a terminal at the project root (BlazorApp/).
 
-### 3. Apply Database Migrations
-- Used Entity Framework Core migrations to create the database schema
-- Navigated to the BlazorApp directory in the terminal
-- Ran the command: `dotnet ef database update`
-- This command created the database and all tables based on the models defined in the application
+Run:
+dotnet tool update --global dotnet-ef   
+dotnet ef database update       
 
 ### 4. Database Schema
 The database schema includes tables for:
@@ -41,27 +43,20 @@ The database schema includes tables for:
 - Transaction
 - ChatMessages
 
-## How to Run the Application
-1. Ensure SQL Server is running (can be checked through SQL Server Configuration Manager)
-2. Open the project in Visual Studio or your preferred IDE
-3. Build the solution using `dotnet build`
-4. Run the application using `dotnet run`
-5. The application will automatically connect to the database using the connection string in appsettings.json
+**## 5. How to Run the Application**
+dotnet build     
+dotnet run
+The Blazor app will read the connection string from appsettings.json (overridden by appsettings.Development.json or environment variables if present) and connect automatically.
 
-## Troubleshooting
-- If you encounter a "server not found" error, ensure SQL Server is running
-- If you get authentication errors, check that you're using the correct authentication method (Windows Authentication in this case)
-- For migration errors, ensure Entity Framework Core tools are installed: `dotnet tool install --global dotnet-ef`
-- Make sure TrustServerCertificate is set to True for development environments
+**## 6. Troubleshooting**
+Cannot open server requested by the login → Add your current IP in ADS: Azure tab → Server → Firewall rules.
+Login failed → Reconnect in ADS using the correct auth type (Azure AD).
+TLS/SSL handshake error → For Azure SQL keep Encrypt=True;TrustServerCertificate=False; for local dev set TrustServerCertificate=True.
 
+EF migration timeout → Open outbound port 1433 (or use a VPN) and rerun dotnet ef database update.
 ## Additional Configuration Options
-- To enable SQL Server remote connections:
-  1. Open SQL Server Configuration Manager
-  2. Navigate to SQL Server Network Configuration > Protocols for MSSQLSERVER
-  3. Enable TCP/IP protocol
-  4. Restart the SQL Server service
-  
-- To change authentication mode:
-  1. Open SQL Server Management Studio
-  2. Right-click the server in Object Explorer and select Properties
-  3. Go to Security page and select the desired server authentication mode
+ Enable remote connections on a local SQL Server
+ADS doesn’t surface network settings; open SQL Server Configuration Manager (still required) → SQL Server Network Configuration → enable TCP/IP → restart the service.
+
+Switch authentication mode (local engine)
+ADS > Object Explorer → right-click server → Manage → Security tab → toggle between Windows Only and Mixed Mode.
