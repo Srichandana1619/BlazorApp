@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|c:\\users\\srich\\onedrive\\documents\\maycs-451r-commerce-updated\\cs-451r-commerce-main\\cs-451r-commerce-main\\blazorapp\\components\\pages\\goals.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|solutionrelative:components\\pages\\goals.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|c:\\users\\srich\\onedrive\\documents\\maycs-451r-commerce-updated\\cs-451r-commerce-main\\cs-451r-commerce-main\\blazorapp\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|c:\\users\\srich\\onedrive\\documents\\maycs-451r-commerce-updated\\cs-451r-commerce-main\\cs-451r-commerce-main\\blazorapp\\components\\pages\\authmanagers\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|solutionrelative:components\\pages\\authmanagers\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|c:\\users\\srich\\onedrive\\documents\\maycs-451r-commerce-updated\\cs-451r-commerce-main\\cs-451r-commerce-main\\blazorapp\\components\\pages\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|solutionrelative:components\\pages\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|c:\\users\\srich\\onedrive\\documents\\maycs-451r-commerce-updated\\cs-451r-commerce-main\\cs-451r-commerce-main\\blazorapp\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|c:\\users\\srich\\onedrive\\documents\\maycs-451r-commerce-updated\\cs-451r-commerce-main\\cs-451r-commerce-main\\blazorapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04DCC5E7-E608-4D60-BAB8-AE43B2601610}|BlazorApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Logout.razor",
+              "DocumentMoniker": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\AuthManagers\\Logout.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\AuthManagers\\Logout.razor",
+              "ToolTip": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\AuthManagers\\Logout.razor",
+              "RelativeToolTip": "Components\\Pages\\AuthManagers\\Logout.razor",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T12:13:46.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dashboard.razor",
+              "DocumentMoniker": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\Dashboard.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Dashboard.razor",
+              "ToolTip": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\Dashboard.razor",
+              "RelativeToolTip": "Components\\Pages\\Dashboard.razor",
+              "ViewState": "AgIAAPAAAAAAAAAAAAApwPwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T06:38:14.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Components\\App.razor",
+              "ToolTip": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\App.razor",
+              "RelativeToolTip": "Components\\App.razor",
+              "ViewState": "AgIAAAUAAACgzczMzIwjwBcAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T05:57:08.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T05:27:52.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Goals.razor",
+              "DocumentMoniker": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\Goals.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Goals.razor",
+              "ToolTip": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\Goals.razor",
+              "RelativeToolTip": "Components\\Pages\\Goals.razor",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAANUCAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T04:14:34.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\srich\\OneDrive\\Documents\\mayCS-451R-Commerce-updated\\CS-451R-Commerce-main\\CS-451R-Commerce-main\\BlazorApp\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Pages\\Login.razor",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwEUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T04:34:10.54Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
