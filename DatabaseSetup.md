@@ -1,7 +1,7 @@
 # Database Setup Documentation
 
 ## Prerequisites
-1. SQL Server installed on the local machine
+1. Azure Data Studio Server installed on the local machine
 2. .NET SDK 8.0 or later
 3. Entity Framework Core tools installed
 
@@ -10,7 +10,7 @@
 ### 1. Install or Provision SQL Engine
 Option	How
 Local SQL Server	Download Developer/Express from Microsoft → run “Basic” install (defaults are fine).
-Azure SQL Database	Create a single database in the Azure portal or directly inside ADS’s “Azure” 
+Azure Database Studio	Create a single database in the Azure portal or directly inside ADS’s “Azure” 
 
 ### 2. Configure the Connection String
 - Modified the connection string in `appsettings.json` to connect to the local SQL Server instance:
@@ -28,7 +28,7 @@ Azure SQL Database	Create a single database in the Azure portal or directly insi
   - `TrustServerCertificate=True`: Skips certificate validation (for development)
   - `MultipleActiveResultSets=true`: Allows multiple active result sets
 **
-### 3. Apply Database Migrations**
+ ### 3. Apply Database Migrations**
 Open a terminal at the project root (BlazorApp/).
 
 Run:
